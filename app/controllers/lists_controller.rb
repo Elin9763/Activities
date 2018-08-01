@@ -1,6 +1,7 @@
 class ListsController < ApplicationController
 
-    def index
+    def index 
+        @list = List.new #<-- the new form(def new)
         @lists = List.all
     end
 
@@ -8,5 +9,19 @@ class ListsController < ApplicationController
         #data passed by user // /lists/:id thanks to params[:id]
         @list = List.find(params[:id])
     end
+
+    def create
+        @list = List.new(list_params)
+        @list.name = params[:list][:name]
+        @list.save
+
+        redirect_to list_url(@list)
+    end
+
+    private
+
+        def list_params #strong params
+            params.require(:list).permit(:name)
+        end
 
 end
