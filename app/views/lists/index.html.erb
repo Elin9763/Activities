@@ -2,7 +2,7 @@
     <header class="header">
         <h1>Activities</h1>
         <%= form_for(@list) do |f| %>
-            <%= f.text_field :name, :class => "new-todo" %>
+            <%= f.text_field :name, :class => "new-todo", :placeholder => (@list.errors.full_messages_for(:name).first || "Enter a new Activity") %>
             <%= f.submit :style => "display: none" %>
         <% end %>
       </header>
