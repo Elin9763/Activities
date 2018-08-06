@@ -16,9 +16,7 @@
             <% @list.items.each do |item| %>
             <li class="<%= "completed" if item.complete? %>">
                 <div class="view">
-                    <%= form_for([@list, item]) do |f| %>
-                        <%= f.check_box :status, :class => "toggle", :checked => (true if item.complete?) %>
-                    <% end %>
+                    <input class="toggle" type="checkbox" <%= "checked='checked'" if item.complete? %>>
                     
                     <label><%= item.description %></label>
                 </div>
