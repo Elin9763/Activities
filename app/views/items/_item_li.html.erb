@@ -1,8 +1,8 @@
-<li class="<%= "completed" if item.complete? %>">
+<%= content_tag_for :li, item, :class => li_class_for_item(item) do %>
 <%= form_for([@list, item]) do |f| %>
     <div class="view">
-        <%= f.check_box :status, :class => "toggle", :checked => (true if item.complete?) %>
+        <%= f.check_box :status, :class => "toggle", :checked => item.complete? %>
     <% end %>
     <label><%= item.description %></label>
     </div>
-</li>
+<% end %>
