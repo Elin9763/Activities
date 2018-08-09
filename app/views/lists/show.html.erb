@@ -14,16 +14,7 @@
         <label for="toggle-all">Mark all as complete</label>
         <ul class="todo-list">
             <% @list.items.each do |item| %>
-
-            <li class="<%= "completed" if item.complete? %>">
-            <%= form_for([@list, item]) do |f| %>
-                <div class="view">
-                    <%= f.check_box :status, :class => "toggle", :checked => (true if item.complete?) %>
-            <% end %>
-                <label><%= item.description %></label>
-                </div>
-            </li>
-
+                <%= render :partial => "items/item_li", :locals => {:item => item} %>
             <% end %>
 
         </ul>
