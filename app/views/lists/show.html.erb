@@ -15,14 +15,15 @@
         <ul class="todo-list">
             <% @list.items.each do |item| %>
 
-            <%= form_for([@list, item]) do |f| %>
             <li class="<%= "completed" if item.complete? %>">
+            <%= form_for([@list, item]) do |f| %>
                 <div class="view">
                     <%= f.check_box :status, :class => "toggle", :checked => (true if item.complete?) %>
             <% end %>
                 <label><%= item.description %></label>
                 </div>
             </li>
+
             <% end %>
 
         </ul>
