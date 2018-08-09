@@ -1,8 +1,8 @@
-<%= li_for_item(item) do %>
+<li class="<%= li_class_for_item(item) %>">
 <%= form_for([@list, item]) do |f| %>
     <div class="view">
         <%= f.check_box :status, :class => "toggle", :checked => item.complete? %>
     <% end %>
     <label><%= item.description %></label>
     </div>
-<% end %>
+</li>
