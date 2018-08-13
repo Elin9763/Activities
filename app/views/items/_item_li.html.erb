@@ -6,11 +6,10 @@
         <%= f.check_box :status, :class => "toggle", :checked => item.complete? %>
     <% end %>
         <label><%= item.description %></label>
-        <form action="<%= list_item_path(item.list, item) %>" method="POST">
-            <input type="hidden" name="_method" value="DELETE" />
+        <%= form_tag(list_item_path(item.list, item), :method => :delete) do %>
 
             <button type="submit" class="destroy"></button>
-        </form>
+        <% end %>
     </div>
 
 <% end %>
