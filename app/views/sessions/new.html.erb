@@ -3,6 +3,8 @@
         <h1>Log In</h1>
         <%= form_tag(sessions_path) do %>
             <%= text_field_tag :email, '', :class => "new-todo", :placeholder => "Login with your email" %>
+            <%= text_field_tag :password, '', :class => "new-todo", :placeholder => "Please enter your password" %>
+            <%= submit_tag %>
         <% end %>
 
 
