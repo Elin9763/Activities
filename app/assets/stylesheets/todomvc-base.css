@@ -377,3 +377,7 @@ html .clear-completed:active {
 		bottom: 10px;
 	}
 }
+
+.field_with_errors input[type='text']{
+	border: 1px solid red;
+}
