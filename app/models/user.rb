@@ -4,8 +4,8 @@ class User < ApplicationRecord
     has_many :items
     has_many :lists, :through => :items
     
-    #scope :most_completed_assignments, -> {order (assignments_completed_count: :desc).first}
-    #scope :second_most_completed_assignments -> {order(assignments_completed_count: :desc).all[1..-1] }
+    #scope :most_completed_lists, -> {order (lists_completed_count: :desc).first}
+    #scope :second_most_completed_lists -> {order(lists_completed_count: :desc).all[1..-1] }
 
     validates :email, :presence => true
     validates :email, :uniqueness => true

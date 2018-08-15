@@ -17,5 +17,10 @@ class UsersController < ApplicationController
         end
     end
 
+    def show_completed
+        @featured_user ||= User.most_completed_assignments
+        @most_completed_users = User.second_most_completed_assignments
+    end
+
 
 end
