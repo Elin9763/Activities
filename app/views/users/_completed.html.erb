@@ -1,0 +1,10 @@
+<h3> Status of who has done what</h3>
+    <h1> Featured User </h1>
+    <h2><%= featured_user.email %> has completed the most (<%= featured_user.lists.complete.size %>) activities! </h2>
+    
+    <% for user in @most_completed_users %>
+        <%= user.email %> has completed <%= user.lists.complete.size %> activities. 
+        <br>
+    <% end %>
+
+    <%= link_to 'Back to activities list', user_lists_path(current_user, @list) %>
