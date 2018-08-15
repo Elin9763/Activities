@@ -1,0 +1,13 @@
+<% if current_user %>
+    <h4> check out <%= link_to "Your Lists", lists_path(current_user, @list) %></h4>
+    <br>
+        <p> You're logged in as: <%= current_user.email %></p>
+        <p><%= link_to "Logout", logout_path %></p>
+    <%else %>
+        <%= link_to "Signup", new_user_path(@user) %>
+        <br>
+        <%= link_to "Login", login_path %>
+        <br>
+    <h3>Login with Github</h3>
+    Use <%= link_to "Github", "/auth/github" %>
+<% end %>
