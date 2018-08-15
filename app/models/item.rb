@@ -1,5 +1,7 @@
 class Item < ApplicationRecord
     belongs_to :list
+    belongs_to :user
+    
     validates :description, presence: true
     STATUS = {
         :incomplete => 0,
