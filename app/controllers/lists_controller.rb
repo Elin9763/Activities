@@ -23,17 +23,13 @@ class ListsController < ApplicationController
         end
     end
 
-    def update
-        @list = List.find(params[:id])
-        @list.update(list_params)
-    
-        redirect_to list_path(@list)
-    end
-
     def destroy
-        @list.destroy
+        @list = List.find(params[:id])
+        if @list.present?
+            @list.destroy
+        end
+            redirect_to lists_path
 
-        redirect_to list_path(@list)
     end
 
     private

@@ -15,7 +15,6 @@
             <li>
                 <div class="view">
                     <label><%= link_to list.name, list_path(list) %></label>
-                    <%= button_to "x", list_path(list), :method => "delete", :class => "destroy" %>
                 </div>
             </li>
             <% end %>
