@@ -26,6 +26,7 @@
 </section>
 
 <footer class="info">
+    <%= link_to "Most Completed", completed_most_path(@user) %>
     <p>You're logged in as: <%= current_user.email %></p>
     <p><%= link_to "Logout", logout_path %></p>
 </footer>
