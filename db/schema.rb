@@ -10,15 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_15_042004) do
+ActiveRecord::Schema.define(version: 2018_08_16_215617) do
 
   create_table "items", force: :cascade do |t|
     t.string "description"
     t.integer "list_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "status", default: 0
     t.integer "user_id"
+    t.boolean "status", default: false
   end
 
   create_table "lists", force: :cascade do |t|
@@ -34,6 +34,8 @@ ActiveRecord::Schema.define(version: 2018_08_15_042004) do
     t.string "password_digest"
     t.integer "uid"
     t.string "provider"
+    t.integer "items_count", default: 0, null: false
+    t.integer "items_completed_count", default: 0, null: false
   end
 
 end

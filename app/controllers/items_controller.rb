@@ -24,6 +24,14 @@ class ItemsController < ApplicationController
     redirect_to list_path(@item.list)
   end
 
+  def complete
+    Item.where(id: params[:item_ids]).update_all(status: true)
+    current_user.items_completed_count +=(params[:item_ids].count)
+    current_user.save
+
+    redirect_to_items_path(current_user.id)
+  end
+
   private
 
     def item_params
