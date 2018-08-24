@@ -22,7 +22,7 @@ class Item < ApplicationRecord
     end
 
     def self.incomplete
-        where(stauts: false).order('id DESC')
+        where(status: false).order('id DESC')
     end
 
 end
