@@ -1,4 +1,6 @@
 class ItemsController < ApplicationController
+  before_action :authentication_required
+
   def create
     @list = List.find(params[:list_id]) #finding the parent
     @item = @list.items.build(item_params)

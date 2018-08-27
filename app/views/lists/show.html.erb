@@ -18,6 +18,8 @@
             <br>
             <%= button_to "Delete", list_path(@list), :method => "delete", :class => "destroy" %>
             <br>
+            <%= button_to "Edit", list_path(@list), :method => "patch", :class => "update" %>
+            <br><br>
             <%= link_to 'Back', lists_path(@list) %>
         </ul>
       </section>
