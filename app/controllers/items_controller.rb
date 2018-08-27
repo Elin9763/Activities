@@ -14,6 +14,7 @@ class ItemsController < ApplicationController
 
   def update #patch - /lists/:list_id/items/:item_id
     @item = Item.find(params[:id])
+    @item.user_id = current_user.id
     @item.update(item_params)
 
     redirect_to list_path(@item.list)
