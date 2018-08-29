@@ -1,5 +1,4 @@
 class ItemsController < ApplicationController
-  before_action :authentication_required
 
   def create
     @list = List.find(params[:list_id]) #finding the parent
@@ -14,7 +13,6 @@ class ItemsController < ApplicationController
 
   def update #patch - /lists/:list_id/items/:item_id
     @item = Item.find(params[:id])
-    @item.user_id = current_user.id
     @item.update(item_params)
 
     redirect_to list_path(@item.list)
