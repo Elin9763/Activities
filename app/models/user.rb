@@ -2,8 +2,8 @@ class User < ApplicationRecord
     has_secure_password
     has_many :items_completed, -> {complete}, class_name: "Item"
 
-    validates :email, presence: true
-    validates :email, uniqueness: true
+    validates :email, :presence => true
+    validates :email, :uniqueness => true
     
     scope :most_completed_items, -> {order(items_completed_count: :desc).first}
     scope :second_most_completed_items, -> {order(items_completed_count: :desc).all[1..-1]}
