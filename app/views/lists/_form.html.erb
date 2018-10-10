@@ -1,0 +1,6 @@
+<h1>Edit Activity</h1>
+<%= form_for([current_user, @list]) do |f| %>
+    <%= f.text_field :name, :class => "new-todo", :placeholder => (@list.errors.full_messages_for(:name).first || "Enter a new Activity") %>
+    <%= f.submit :style=> "display: none" %>
+<% end %>
+
